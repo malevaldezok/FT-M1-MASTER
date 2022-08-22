@@ -1,0 +1,50 @@
+'use strict'
+
+function BinarioADecimal(num) {
+  // tu codigo aca
+  //let array = num.split();
+  //let sumatoria = 0;
+  //for (let i = 0; i < array.length; i++) {
+    //sumatoria += array[i] * 2 ** (array.length - 1 - i);
+  //}
+  //return sumatoria;
+ //}
+
+/*
+tomar el numero binario
+elevar el dos(base) a una potencia dependiendo de las posiciones del binario(empezando desde el final)
+cancelar los que esten en 0
+acumular la sumatoria
+*/
+let sumatoria = 0;
+let contador = 0;
+for (let i = num.length - 1; i >= 0; i--) {
+  sumatoria += Math.pow(2, contador) * num[i];
+  contador++;
+}
+return sumatoria;
+}
+
+
+function DecimalABinario(num) {
+  // tu codigo aca
+let sumatoria = "";
+while(num > 0) {
+  sumatoria = num % 2 + sumatoria;
+  num = Math.floor(num / 2)
+}
+return sumatoria;
+}
+
+
+//PRACTICA
+//PRACTICA
+//PRACTICA
+//PRACTICA 
+//PRACTICA
+
+
+module.exports = {
+  BinarioADecimal,
+  DecimalABinario,
+}
